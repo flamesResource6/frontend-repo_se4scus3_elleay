@@ -1,28 +1,32 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero3D from './components/Hero3D';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-black text-white font-inter">
+      <Navbar />
+      <main className="pt-16">
+        <Hero3D />
+        <Projects />
+        <Skills />
+        <Contact />
+        <footer className="border-t border-white/10 bg-black/60">
+          <div className="container mx-auto px-6 md:px-10 py-8 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>© {new Date().getFullYear()} Gokulakrishnan. All rights reserved.</p>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-white">GitHub</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+              <a href="#home" className="hover:text-white">Back to top</a>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
